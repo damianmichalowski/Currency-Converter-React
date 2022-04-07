@@ -1,3 +1,20 @@
+# Currency-Converter
+## **DEMO** Link
+https://damianmichalowski.github.io/Currency-Converter-React/
+
+## Description
+Simple Currency-Converter. It allows you to convert a currency (EUR / USD) into PLN. Currency-Converter is a responsive app. 
+
+## Technology used
+1. REACT-APP
+2. BABEL
+4. Javascript ES6+ Features (Arrow Functions)
+5. HTML
+6. CSS
+9. BEM
+
+## Preview 
+![App Screenshot](src/images/screen.jpg)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
