@@ -4,13 +4,16 @@ html {
 
 *, ::after, ::before {
   box-sizing: inherit;
-  font-family: 'Lato', sans-serif;
 }
 
-body {
-  background: url(https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg);
-  background-repeat: no-repeat;
-  background-position: center;
+#root {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image:linear-gradient(black, black), url("background.jpg");
+  background-blend-mode: saturation;
   background-size: cover;
-  background-attachment: fixed;
+  background-position: center;
 }
