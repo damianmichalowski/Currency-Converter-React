@@ -54,31 +54,31 @@
     max-width: 200px;
     border: none;
     padding: 10px;
-    margin-top: 10px;
-    background-color: hsl(0, 0%, 100%);
-    color:black;
+    margin: 5px;
+    background-color: hsl(0, 0%, 0%);
+    color:rgb(255, 255, 255);
     border: 1px solid rgb(0, 0, 0);
 }
 
 .form__button:hover {
-    background-color: hsl(120, 100%, 84%);
+    background-color: hsl(0, 0%, 11%);
 }
 
 .form__button:active {
-    background-color: hsl(120, 100%, 71%);
+    background-color: hsl(0, 0%, 24%);
 }
 
 .form__button--clear {
-    background-color: hsl(0, 0%, 0%);
-    color:white;
+    background-color: hsl(0, 0%, 100%);
+    color:rgb(110, 110, 110);
 }
 
 .form__button--clear:hover {
-    background-color: hsl(0, 100%, 23%);
+    background-color: hsl(0, 0%, 92%);
 }
 
 .form__button--clear:active {
-    background-color: hsl(0, 100%, 43%);
+    background-color: hsl(0, 0%, 100%);
 }
 
 .form__footer {
@@ -144,30 +144,30 @@
         border: none;
         padding: 10px;
         margin-top: 10px;
-        background-color: hsl(0, 0%, 100%);
-        color:black;
+        background-color: hsl(0, 0%, 0%);
+        color:rgb(255, 255, 255);
         border: 1px solid rgb(0, 0, 0);
     }
     
     .form__button:hover {
-        background-color: hsl(120, 100%, 84%);
+        background-color: hsl(0, 0%, 11%);
     }
     
     .form__button:active {
-        background-color: hsl(120, 100%, 71%);
+        background-color: hsl(0, 0%, 24%);
     }
     
     .form__button--clear {
-        background-color: hsl(0, 0%, 0%);
-        color:white;
+        background-color: hsl(0, 0%, 100%);
+        color:rgb(110, 110, 110);
     }
     
     .form__button--clear:hover {
-        background-color: hsl(0, 100%, 23%);
+        background-color: hsl(0, 0%, 92%);
     }
     
     .form__button--clear:active {
-        background-color: hsl(0, 100%, 43%);
+        background-color: hsl(0, 0%, 100%);
     }
     
     p {
