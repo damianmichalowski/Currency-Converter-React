@@ -27,9 +27,9 @@ export const Clock = () => {
         const intervalID = setInterval(updateTime, 1000);
 
         return () => {
-            clearInterval(intervalID)
+            clearInterval(intervalID);
         };
-    },[]);
+    },);
 
     return (
         <p className="form__date">
