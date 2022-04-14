@@ -86,6 +86,14 @@
     font-size: 15px;
 }
 
+.form__date {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
 @media (max-width: 767px) {
     .form {
         position: absolute;
@@ -99,76 +107,6 @@
         width: 100%;
         max-width: 300px;
     }
-
-    .form__fieldset {
-        padding: 10px;
-        margin: 10px 0;
-        border: none;
-    }
-
-    .form__legend {
-        display: inline-block;
-        padding: 10px;
-        align-items: center;
-        max-width: 300px;
-        width: 100%;
-        font-weight: bold;
-        font-size: 140%;
-        margin: 0;
-    }
-
-    .form__labelText {
-        width: 100%;
-        max-width: 200px;
-        display: inline-block;
-        margin-right: 5px;
-        padding: 10px;
-        border-bottom: 1px solid rgb(255, 255, 255);
-    }
-
-    .form__field {
-        border: 1px solid #ccc;
-        padding: 10px;
-        width: 100%;
-        max-width: 200px;
-        background-color: white;
-    }
-
-    .form__field:hover {
-        background-color: rgb(246, 246, 246);
-    }
-
-    .form__button {
-        width: 100%;
-        max-width: 200px;
-        border: none;
-        padding: 10px;
-        margin-top: 10px;
-        background-color: hsl(0, 0%, 0%);
-        color:rgb(255, 255, 255);
-        border: 1px solid rgb(0, 0, 0);
-    }
-    
-    .form__button:hover {
-        background-color: hsl(0, 0%, 11%);
-    }
-    
-    .form__button:active {
-        background-color: hsl(0, 0%, 24%);
-    }
-    
-    .form__button--clear {
-        background-color: hsl(0, 0%, 100%);
-        color:rgb(110, 110, 110);
-    }
-    
-    .form__button--clear:hover {
-        background-color: hsl(0, 0%, 92%);
-    }
-    
-    .form__button--clear:active {
-        background-color: hsl(0, 0%, 100%);
-    }
     
     p {
         margin: 0;
@@ -178,4 +116,6 @@
         margin: 15px;
         font-size: 13px;
     }
+
+    
 }

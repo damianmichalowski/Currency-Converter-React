@@ -2,6 +2,7 @@ import "./style.css";
 import { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
+import {Clock} from "./Clock";
 
 export const Form = ({ calculateResult, result, setResult }) => {
   const [currency, setCurrency] = useState(currencies[0].name);
@@ -12,10 +13,10 @@ export const Form = ({ calculateResult, result, setResult }) => {
     event.preventDefault();
     calculateResult(currency, amount);
   }
-  
-  const onCurrencyChange =({target}) => {
+
+  const onCurrencyChange = ({ target }) => {
     setCurrency(target.value);
-    
+
     setCourse(currencies.find(({ name }) => name === target.value).rate);
   };
 
@@ -29,6 +30,7 @@ export const Form = ({ calculateResult, result, setResult }) => {
 
   return (
     <form onSubmit={onSubmit} className="form">
+      <Clock />
       <fieldset className="form__fieldset">
         <legend className="form__legend">Currency Converter</legend>
 
