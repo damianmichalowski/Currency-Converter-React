@@ -3,9 +3,9 @@ import "../style.css"
 
 export const Clock = () => {
 
-    const getFormatTime = () => {
-        return currentTime.toLocaleString(
-            "pl",
+    const formatDate = (date) => {
+        return date.toLocaleString(
+            undefined,
             {
                 weekday: "long",
                 day: "numeric",
@@ -16,24 +16,23 @@ export const Clock = () => {
             });
     };
 
-    const [currentTime, setCurrentTime] = useState(new Date());
-
-    const updateTime = () => {
-        setCurrentTime(new Date());
-        getFormatTime();
-    };
-
+    const [date, setDate] = useState(new Date());
+    
     useEffect(() => {
-        const intervalID = setInterval(updateTime, 1000);
+        const intervalID = setInterval(() => {
+            setDate(new Date());
+        }, 1000);
 
         return () => {
             clearInterval(intervalID);
         };
-    },);
+    }, []);
 
     return (
-        <p className="form__date">
-            Dzisiej jest {getFormatTime()}
-        </p>
+        <div className="form__date">
+            Dzisiej jest
+            {" "}
+            {formatDate(date)}
+        </div>
     );
 };
