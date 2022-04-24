@@ -1,4 +1,4 @@
-import { DateStyled } from "./styled";
+import { Wrapper } from "./styled";
 import { useCurrentDate } from "./useCurrentDate";
 
 export const Clock = () => {
@@ -18,10 +18,10 @@ export const Clock = () => {
     };
 
     return (
-        <DateStyled>
+        <Wrapper>
             Dzisiej jest
             {" "}
             {formatdate(date)}
-        </DateStyled>
+        </Wrapper>
     );
 };

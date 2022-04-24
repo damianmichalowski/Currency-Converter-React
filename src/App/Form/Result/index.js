@@ -1,7 +1,7 @@
-import { ResultStyled } from "./styled"
+import { Wrapper } from "./styled"
 
 export const Result = ({ result }) => (
-    <ResultStyled>
+    <Wrapper>
         {result !== undefined && (
             <>
                 {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;={" "}
@@ -11,5 +11,5 @@ export const Result = ({ result }) => (
                 </strong>
             </>
         )}
-    </ResultStyled>
+    </Wrapper>
 )

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const DateStyled = styled.div`
+export const Wrapper = styled.div`
     display: flex;
     justify-content: flex-end;
     margin: 20px;

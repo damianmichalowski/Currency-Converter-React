@@ -2,7 +2,7 @@ import { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
 import { Clock } from "./Clock";
-import { FormStyled, Fieldset, Legend, Title , Footer , Input , InputSelect , Button } from "./styled";
+import { StyledForm, Fieldset, Legend, Title , Footer , Input , InputSelect , Button } from "./styled";
 
 export const Form = ({ calculateResult, result, setResult }) => {
   const [currency, setCurrency] = useState(currencies[0].name);
@@ -29,7 +29,7 @@ export const Form = ({ calculateResult, result, setResult }) => {
   };
 
   return (
-    <FormStyled onSubmit={onSubmit}>
+    <StyledForm onSubmit={onSubmit}>
       <Clock />
       <Fieldset>
         <Legend>Currency Converter</Legend>
@@ -72,7 +72,7 @@ export const Form = ({ calculateResult, result, setResult }) => {
         <Result result={result} />
 
       </Fieldset>
-    </FormStyled>
+    </StyledForm>
   );
 };
 

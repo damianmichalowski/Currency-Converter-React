@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const FormStyled = styled.form`
+export const StyledForm = styled.form`
     position: absolute;
     top: 50%;
     left: 50%;
