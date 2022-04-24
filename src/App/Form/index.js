@@ -2,7 +2,7 @@ import { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
 import { Clock } from "./Clock";
-import { StyledForm, Fieldset, Legend, Title , Footer , Input , InputSelect , Button } from "./styled";
+import { StyledForm, Fieldset, Legend, Title , Footer , Input , Button } from "./styled";
 
 export const Form = ({ calculateResult, result, setResult }) => {
   const [currency, setCurrency] = useState(currencies[0].name);
@@ -34,7 +34,7 @@ export const Form = ({ calculateResult, result, setResult }) => {
       <Fieldset>
         <Legend>Currency Converter</Legend>
         <Title>Wybierz walutę:</Title>
-        <InputSelect value={currency} onChange={onCurrencyChange}>
+        <Input as="select" value={currency} onChange={onCurrencyChange}>
           {currencies.map((currency => (
             <option
               key={currency.name}
@@ -43,7 +43,7 @@ export const Form = ({ calculateResult, result, setResult }) => {
               {currency.name}
             </option>
           )))}
-        </InputSelect>
+        </Input>
 
         <Title>Podaj kwotę:</Title>
         <Input

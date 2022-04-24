@@ -65,18 +65,6 @@ export const Input = styled.input`
     }
 `;
 
-export const InputSelect = styled.select`
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 100%;
-    max-width: 200px;
-    background: white;
-
-    &:hover {
-        background: rgb(246, 246, 246);
-    }
-`;
-
 export const Button = styled.button`
     width: 100%;
     max-width: 200px;
