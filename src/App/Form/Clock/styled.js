@@ -6,5 +6,5 @@ export const Wrapper = styled.div`
     margin: 20px;
     font-size: 14px;
     font-family: monospace;
-    color: rgb(93, 93, 93);
+    color: ${({ theme }) => theme.color.grey};
 `;

@@ -5,23 +5,15 @@ export const StyledForm = styled.form`
     top: 50%;
     left: 50%;
     transform: translate(-49%, -49%);
-    background: rgba(255, 255, 255, 0.935);
+    background: ${({ theme }) => theme.color.whiteTransparent};
     border-radius: 25px;
     font-size: 20px;
     text-align: center;
     width: 100%;
     max-width: 600px;
 
-    @media (max-width: 767px) {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-49%, -49%);
-        background-color: rgba(255, 255, 255, 0.935);
-        border-radius: 25px;
-        font-size: 16px;
-        text-align: center;
-        width: 100%;
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        font-size: 16px;        
         max-width: 300px;
     }
 `;
@@ -50,7 +42,6 @@ export const Title = styled.p`
     display: inline-block;
     margin-right: 5px;
     padding: 10px;
-    border-bottom: 1px solid rgb(255, 255, 255);
 `;
 
 export const Input = styled.input`
@@ -58,10 +49,10 @@ export const Input = styled.input`
     padding: 10px;
     width: 100%;
     max-width: 200px;
-    background: white;
+    background: ${({ theme }) => theme.color.white};
 
     &:hover {
-        background: rgb(246, 246, 246);
+        filter: brightness(97%);
     }
 `;
 
@@ -71,12 +62,12 @@ export const Button = styled.button`
     border: none;
     padding: 10px;
     margin: 5px;
-    background: hsl(0, 0%, 0%);
-    color:rgb(255, 255, 255);
-    border: 1px solid rgb(0, 0, 0);
+    background: ${({ theme }) => theme.color.black};
+    color:${({ theme }) => theme.color.white};
+    border: 1px solid ${({ theme }) => theme.color.black};
 
     &:hover {
-        background: hsl(0, 0%, 11%);
+        background: hsl(0, 0%, 10%);
     }
 
     &:active {
@@ -84,8 +75,8 @@ export const Button = styled.button`
     }
 
     ${({ reset }) => reset && css`
-        background: hsl(0, 0%, 100%);
-        color:rgb(110, 110, 110);
+        background: ${({ theme }) => theme.color.white};
+        color:${({ theme }) => theme.color.grey};
 
         &:hover {
             background: hsl(0, 0%, 96%);
