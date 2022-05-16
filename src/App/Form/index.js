@@ -2,9 +2,9 @@ import { useState } from "react";
 import { currencies } from "../currencies";
 import { Result } from "./Result";
 import { Clock } from "./Clock";
-import { StyledForm, Fieldset, Legend, Title , Footer , Input , Button } from "./styled";
+import { StyledForm, Fieldset, Legend, Title, Footer, Input, Button } from "./styled";
 
-export const Form = ({ calculateResult, result, setResult }) => {
+export const Form = ({ calculateResult, result, setResult}) => {
   const [currency, setCurrency] = useState(currencies[0].name);
   const [amount, setAmount] = useState("");
   const [course, setCourse] = useState(currencies[0].rate);
@@ -27,7 +27,7 @@ export const Form = ({ calculateResult, result, setResult }) => {
     setCourse(currencies[0].rate);
     setResult(undefined);
   };
-
+  
   return (
     <StyledForm onSubmit={onSubmit}>
       <Clock />
