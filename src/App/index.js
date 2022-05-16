@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { Form } from "./Form";
 import { currencies } from "./currencies";
-import { useApi } from "./useApi";
+import { useFetch } from "./useFetch";
 
 function App() {
   const [result, setResult] = useState();
 
-  const ratesData = useApi();
+  const ratesData = useFetch();
   console.log(ratesData);
   console.log(ratesData.rates);
 

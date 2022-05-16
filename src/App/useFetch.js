@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState , useEffect } from "react";
 
-export const useApi = () => {
+export const useFetch = () => {
     const [ratesData , setRatesData] = useState({});
 
 
