@@ -11,14 +11,15 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 #root {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image:linear-gradient(black, black), url("${background}");
+  background-image:url("${background}");
   background-blend-mode: saturation;
   background-size: cover;
   background-position: center;
+  padding: 20px;
 }
 `;

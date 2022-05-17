@@ -1,19 +1,12 @@
 
-export const currencies = [
-    {
-        name: "EUR",
-        rate: 4.6418,
-    },
-    {
-        name: "USD",
-        rate: 4.2752,
-    },
-    {
-        name: "CHF",
-        rate: 4.59,
-    },
-    {
-        name: "BTC",
-        rate: 171134.26,
-    },
-];
+export const currencies = {
+    rates: {
+        EUR: 4.6418,
+    
+        USD: 4.2752,
+    
+        CHF: 4.59,
+    
+        BTC: 171134.26,
+    }
+  };

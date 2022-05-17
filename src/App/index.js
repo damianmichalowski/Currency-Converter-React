@@ -1,17 +1,15 @@
 import { useState } from "react";
 import { Form } from "./Form";
 import { currencies } from "./currencies";
-import { useFetch } from "./useFetch";
+import {Container} from "./styled.js";
+import { Clock } from "./Clock";
+import { Result } from "./Result";
 
 function App() {
   const [result, setResult] = useState();
 
-  const ratesData = useFetch();
-  console.log(ratesData);
-  console.log(ratesData.rates);
-
   const calculateResult = (currency, amount) => {
-  const rate = currencies.find(({ name }) => name === currency).rate;
+    const rate = currencies.find(({ name }) => name === currency).rate;
 
     setResult({
       sourceAmount: +amount,
@@ -22,11 +20,15 @@ function App() {
 
   return (
     <>
-      <Form
-        result={result}
-        calculateResult={calculateResult}
-        setResult={setResult}
-      />
+      <Container>
+        <Clock />
+        <Form
+          result={result}
+          calculateResult={calculateResult}
+          setResult={setResult}
+        />
+        <Result result={result} />
+      </Container>
     </>
   );
 }
