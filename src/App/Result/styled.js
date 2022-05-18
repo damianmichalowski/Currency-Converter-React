@@ -5,4 +5,5 @@ export const Wrapper = styled.p`
     margin-bottom: 0;
     font-size: 150%;
     text-align: center;
+    word-break: break-word;
 `;

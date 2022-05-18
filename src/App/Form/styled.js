@@ -14,8 +14,14 @@ export const Fieldset = styled.fieldset`
 export const Legend = styled.legend`
     text-align: center;
     padding: 20px;
+    margin-bottom: 0;
     font-size: 2em;
     font-weight: 700;
+    color: ${({ theme }) => theme.color.coffe};
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        
+    };
 `;
 
 export const Container = styled.p`
@@ -25,8 +31,11 @@ export const Container = styled.p`
 export const Label = styled.label`
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    flex-wrap:wrap;
+
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+        flex-direction: column;
+        
+    };
 `;
 
 export const Title = styled.span`
