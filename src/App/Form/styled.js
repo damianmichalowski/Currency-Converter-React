@@ -26,6 +26,7 @@ export const Label = styled.label`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    flex-wrap:wrap;
 `;
 
 export const Title = styled.span`
@@ -84,4 +85,10 @@ export const Wrapper = styled.div`
 
 export const Content = styled.p`
     margin: 20px;
+`;
+
+export const Error = styled.p`
+    text-align: justify;
+    margin: 20px;
+    color: red;
 `;

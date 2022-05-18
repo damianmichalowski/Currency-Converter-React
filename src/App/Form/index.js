@@ -1,37 +1,31 @@
 import { useEffect, useState } from "react";
-import { currencies } from "../currencies";
-import { StyledForm, Fieldset, Legend, Title, Footer, Input, Button, Label, Container, Wrapper, Content, Header } from "./styled";
+import { StyledForm, Fieldset, Legend, Title, Footer, Input, Button, Label, Container, Wrapper, Content, Error } from "./styled";
 import axios from "axios";
 import * as ReactBootStrap from 'react-bootstrap';
 
 export const Form = ({ calculateResult, result, setResult }) => {
-    const [currencyItem, setCurrencyItem] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+  const [currencyItem, setCurrencyItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(true);
 
-    const currencyFunction = async () => {
-      try {
-        const data = await axios
-          .get("https://api.exchangerate.host/latest?base=PLN")
-          .then(res => {
-            if(!res.ok){
-              throw Error("COŚ POSZŁO NIE TAK, sprawdz połącznie z internetem");
-            }
-            console.log(res);
-            setCurrencyItem(res.data);
-          });
-        setTimeout(() => {
-          setLoading(true);
-        }, 2000);
-      } catch (err) {
-        console.log(err.message);
-        setError(err.message);
-      }
-    };
+  const currencyFunction = async () => {
+    try {
+      const response = await axios.get("https://api.exchangerate.host/latest?base=PLN")
+      console.log(response);
+      setCurrencyItem(response.data);
+      setError(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 3000);
+    } catch (error) {
+      setLoading(false);
+      setError(true);
+    }
+  };
 
-    useEffect(() => {
-      currencyFunction();
-    }, []);
+  useEffect(() => {
+    currencyFunction();
+  }, []);
 
 
 
@@ -55,14 +49,22 @@ export const Form = ({ calculateResult, result, setResult }) => {
     setCurrency(target.value);
   };
 
-  if (!loading) {
+
+  if (error) {
     return (
       <>
-      <Wrapper>
-        <Legend as="h1">Przelicznik Walut</Legend>
-        <ReactBootStrap.Spinner animation="border" />
-        <Content>Sekunda... Ładuje kursy z walut Eropejskiego Banku Centralnego...😎</Content>
-      </Wrapper>
+        <Error>Hmm... Coś poszło nie tak.😕 Sprawdź, czy masz połączenie z internetem. 
+          Jeśli masz... to wygląda że to, nasza wina. Może spróbuj później? 🙂</Error>
+      </>
+    );
+  } else if (loading) {
+    return (
+      <>
+        <Wrapper>
+          <Legend>Przelicznik Walut</Legend>
+          <ReactBootStrap.Spinner animation="border" />
+          <Content>Sekunda... Ładuje kursy z walut Eropejskiego Banku Centralnego...😎</Content>
+        </Wrapper>
       </>
     );
   } else {
@@ -91,7 +93,7 @@ export const Form = ({ calculateResult, result, setResult }) => {
             <Label>
               <Title>Waluta:</Title>
               <Input as="select" value={currency} onChange={onCurrencyChange}>
-                {Object.keys(currencies.rates).map((currency => (
+                {Object.keys(currencyItem.rates).map((currency => (
                   <option
                     key={currency}
                     value={currency}
@@ -108,7 +110,7 @@ export const Form = ({ calculateResult, result, setResult }) => {
           <Button>Przelicz</Button>
         </Container>
 
-        <Footer>Kursy walut pobierane są z Europejskiego Banku Centralnego.<br />Aktualne na dzień: </Footer>
+        <Footer>Kursy walut pobierane są z Europejskiego Banku Centralnego.<br/>Aktualne na dzień: <strong>{currencyItem.date}</strong> </Footer>
 
       </StyledForm>
     );
