@@ -2,7 +2,7 @@ import { useState } from "react";
 import { StyledForm, Fieldset, Legend, Title, Footer, Input, Button, Label, Container, Wrapper, Content, Error } from "./styled";
 import * as ReactBootStrap from 'react-bootstrap';
 
-export const Form = ({ calculateResult , error, loading, currencyItem}) => {
+export const Form = ({ calculateResult, error, loading, currencyItem }) => {
   const [currency, setCurrency] = useState("EUR");
   const [amount, setAmount] = useState("");
 
@@ -16,14 +16,7 @@ export const Form = ({ calculateResult , error, loading, currencyItem}) => {
   };
 
 
-  if (error) {
-    return (
-      <>
-        <Error>Hmm... Coś poszło nie tak.😕 Sprawdź, czy masz połączenie z internetem. 
-          Jeśli masz... to wygląda że to, nasza wina. Może spróbuj później? 🙂</Error>
-      </>
-    );
-  } else if (loading) {
+  if (loading) {
     return (
       <>
         <Wrapper>
@@ -31,6 +24,13 @@ export const Form = ({ calculateResult , error, loading, currencyItem}) => {
           <ReactBootStrap.Spinner animation="border" />
           <Content>Sekunda... Ładuje kursy z walut Eropejskiego Banku Centralnego...😎</Content>
         </Wrapper>
+      </>
+    );
+  } else if (error) {
+    return (
+      <>
+        <Error>Hmm... Coś poszło nie tak.😕 Sprawdź, czy masz połączenie z internetem.
+          Jeśli masz... to wygląda że to, nasza wina. Może spróbuj później? 🙂</Error>
       </>
     );
   } else {
@@ -76,7 +76,7 @@ export const Form = ({ calculateResult , error, loading, currencyItem}) => {
           <Button>Przelicz</Button>
         </Container>
 
-        <Footer>Kursy walut pobierane są z Europejskiego Banku Centralnego.<br/>Aktualne na dzień: <strong>{currencyItem.date}</strong> </Footer>
+        <Footer>Kursy walut pobierane są z Europejskiego Banku Centralnego.<br />Aktualne na dzień: <strong>{currencyItem.date}</strong> </Footer>
 
       </StyledForm>
     );
