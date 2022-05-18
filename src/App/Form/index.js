@@ -1,42 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { StyledForm, Fieldset, Legend, Title, Footer, Input, Button, Label, Container, Wrapper, Content, Error } from "./styled";
-import axios from "axios";
 import * as ReactBootStrap from 'react-bootstrap';
 
-export const Form = ({ calculateResult, result, setResult }) => {
-  const [currencyItem, setCurrencyItem] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(true);
-
-  const currencyFunction = async () => {
-    try {
-      const response = await axios.get("https://api.exchangerate.host/latest?base=PLN")
-      console.log(response);
-      setCurrencyItem(response.data);
-      setError(false);
-      setTimeout(() => {
-        setLoading(false);
-      }, 3000);
-    } catch (error) {
-      setLoading(false);
-      setError(true);
-    }
-  };
-
-  useEffect(() => {
-    currencyFunction();
-  }, []);
-
-
-
-
-
-
-
-
-
-
-
+export const Form = ({ calculateResult , error, loading, currencyItem}) => {
   const [currency, setCurrency] = useState("EUR");
   const [amount, setAmount] = useState("");
 
