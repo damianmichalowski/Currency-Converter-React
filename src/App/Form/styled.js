@@ -1,23 +1,21 @@
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
-
+    
     /* @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {      
         
     } */
 `;
 
 export const Fieldset = styled.fieldset`
-   border-radius: 5px;
-   border: none;
-   padding: 0;
+    
 `;
 
 export const Legend = styled.legend`
-   margin: auto;
-   font-size: 200%;
-   font-weight: 700;
-   padding: 20px;
+    text-align: center;
+    padding: 20px;
+    font-size: 2em;
+    font-weight: 700;
 `;
 
 export const Container = styled.p`
@@ -34,7 +32,7 @@ export const Title = styled.span`
     display: inline-block;
     width: 100%;
     max-width: 150px;
-    margin-right: 20px;
+    margin-right: 5px;
     padding: 10px;
     padding-left: 0;
 `;
@@ -53,7 +51,6 @@ export const Input = styled.input`
 `;
 
 export const Button = styled.button`
-
     width: 100%;
     border: none;
     padding: 10px;
@@ -77,4 +74,14 @@ export const Footer = styled.p`
     /* @media (max-width: 767px) {
         
     } */
+`;
+
+export const Wrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+export const Content = styled.p`
+    margin: 20px;
 `;
