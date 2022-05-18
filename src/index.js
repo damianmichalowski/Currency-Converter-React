@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import App from './App/index.js';
 import reportWebVitals from './reportWebVitals';
 import { GlobalStyle } from './GlobalStyle';
@@ -7,14 +7,14 @@ import { ThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <App />
     </ThemeProvider>
   </React.StrictMode>,
-  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
