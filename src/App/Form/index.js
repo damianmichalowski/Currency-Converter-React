@@ -12,7 +12,7 @@ export const Form = ({ calculateResult, result, setResult }) => {
   const currencyFunction = async () => {
     try {
       const data = await axios
-        .get("https://api.lyrics.ovh/v1/Eminem/Godzilla")
+        .get("")
         .then(res => {
           console.log(res);
           setCurrencyItem(res.data.lyrics);
