@@ -23,19 +23,11 @@ Simple Currency-Converter app. (responsive)
 
 ## How it works ?  
 
-<<<<<<< HEAD
 ![App Screenshot](src/images/screen.jpg)
 
 ![App Screenshot](src/images/screentwo.jpg)
 
 ![App Screenshot](src/images/screenthree.jpg)
-=======
-![App Screenshot](src/images/screen1.jpg)
-
-![App Screenshot](src/images/screen2.jpg)
-
-![App Screenshot](src/images/screen3.jpg)
->>>>>>> c4340d5be8aa9f5ce5f92c7b4b6869b1d39c6cfe
 
 # Getting Started with Create React App
 
