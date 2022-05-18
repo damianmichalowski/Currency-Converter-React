@@ -22,9 +22,13 @@ Simple Currency-Converter app. (responsive)
 14. Axios Promys/Async
 
 ## How it works ?  
-![App Screenshot](src/images/screen1.jpg)
-![App Screenshot](src/images/screen2.jpg)
-![App Screenshot](src/images/screen3.jpg)
+
+![App Screenshot](src/images/screen.jpg)
+
+![App Screenshot](src/images/screentwo.jpg)
+
+![App Screenshot](src/images/screenthree.jpg)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
