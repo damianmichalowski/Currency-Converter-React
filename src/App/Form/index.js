@@ -5,29 +5,33 @@ import axios from "axios";
 import * as ReactBootStrap from 'react-bootstrap';
 
 export const Form = ({ calculateResult, result, setResult }) => {
-  const [currencyItem, setCurrencyItem] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+    const [currencyItem, setCurrencyItem] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
-  const currencyFunction = async () => {
-    try {
-      const data = await axios
-        .get("")
-        .then(res => {
-          console.log(res);
-          setCurrencyItem(res.data.lyrics);
-        });
-      setTimeout(() => {
-        setLoading(true);
-      }, 10000);
-    } catch (e) {
-      console.log(e);
-    }
-  };
+    const currencyFunction = async () => {
+      try {
+        const data = await axios
+          .get("https://api.exchangerate.host/latest?base=PLN")
+          .then(res => {
+            if(!res.ok){
+              throw Error("COŚ POSZŁO NIE TAK, sprawdz połącznie z internetem");
+            }
+            console.log(res);
+            setCurrencyItem(res.data);
+          });
+        setTimeout(() => {
+          setLoading(true);
+        }, 2000);
+      } catch (err) {
+        console.log(err.message);
+        setError(err.message);
+      }
+    };
 
-  useEffect(() => {
-    currencyFunction();
-  }, []);
+    useEffect(() => {
+      currencyFunction();
+    }, []);
 
 
 
