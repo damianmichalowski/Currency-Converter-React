@@ -15,8 +15,7 @@ export const Form = ({ calculateResult, error, loading, currencyItem }) => {
     setCurrency(target.value);
   };
 
-
-  if (loading) {
+  if (loading)
     return (
       <>
         <Wrapper>
@@ -26,61 +25,61 @@ export const Form = ({ calculateResult, error, loading, currencyItem }) => {
         </Wrapper>
       </>
     );
-  } else if (error) {
+
+  if (error)
     return (
       <>
         <Error>Hmm... Coś poszło nie tak.😕 Sprawdź, czy masz połączenie z internetem.
           Jeśli masz... to wygląda że to, nasza wina. Może spróbuj później? 🙂</Error>
       </>
     );
-  } else {
-    return (
-      <StyledForm onSubmit={onSubmit}>
-        <Fieldset>
-          <Legend>Przelicznik Walut</Legend>
 
-          <Container>
-            <Label>
-              <Title>Podaj kwotę:</Title>
-              <Input
-                value={amount}
-                onChange={({ target }) => setAmount(target.value)}
-                type="number"
-                required
-                step="any"
-                min="0"
-                placeholder="Wpisz kwotę w zł"
-                autoFocus
-              />
-            </Label>
-          </Container>
-
-          <Container>
-            <Label>
-              <Title>Waluta:</Title>
-              <Input as="select" value={currency} onChange={onCurrencyChange}>
-                {Object.keys(currencyItem.rates).map((currency => (
-                  <option
-                    key={currency}
-                    value={currency}
-                  >
-                    {currency}
-                  </option>
-                )))}
-              </Input>
-            </Label>
-          </Container>
-        </Fieldset>
+  return (
+    <StyledForm onSubmit={onSubmit}>
+      <Fieldset>
+        <Legend>Przelicznik Walut</Legend>
 
         <Container>
-          <Button>Przelicz</Button>
+          <Label>
+            <Title>Podaj kwotę:</Title>
+            <Input
+              value={amount}
+              onChange={({ target }) => setAmount(target.value)}
+              type="number"
+              required
+              step="any"
+              min="0"
+              placeholder="Wpisz kwotę w zł"
+              autoFocus
+            />
+          </Label>
         </Container>
 
-        <Footer>Kursy walut pobierane są z Europejskiego Banku Centralnego.<br />Aktualne na dzień: <strong>{currencyItem.date}</strong> </Footer>
+        <Container>
+          <Label>
+            <Title>Waluta:</Title>
+            <Input as="select" value={currency} onChange={onCurrencyChange}>
+              {Object.keys(currencyItem.rates).map((currency => (
+                <option
+                  key={currency}
+                  value={currency}
+                >
+                  {currency}
+                </option>
+              )))}
+            </Input>
+          </Label>
+        </Container>
+      </Fieldset>
 
-      </StyledForm>
-    );
-  };
+      <Container>
+        <Button>Przelicz</Button>
+      </Container>
+
+      <Footer>Kursy walut pobierane są z Europejskiego Banku Centralnego.<br />Aktualne na dzień: <strong>{currencyItem.date}</strong> </Footer>
+
+    </StyledForm>
+  );
 };
 
 export default Form;
