@@ -3,7 +3,9 @@
 https://damianmichalowski.github.io/Currency-Converter-React/
 
 ## Description
-Simple Currency-Converter app. (responsive)
+Simple Currency-Converter app.
+* **Currencies are taken from the open API** 
+* responsive 
 
 ## Technology used
 1. CREATE-REACT-APP

@@ -59,7 +59,7 @@ export const Form = ({ calculateResult, error, loading, currencyItem }) => {
           <Label>
             <Title>Waluta:</Title>
             <Input as="select" value={currency} onChange={onCurrencyChange}>
-              {Object.keys(currencyItem.rates).map((currency => (
+              {Object.keys(currencyItem.rates).map(((currency) => (
                 <option
                   key={currency}
                   value={currency}

@@ -99,5 +99,5 @@ export const Content = styled.p`
 export const Error = styled.p`
     text-align: justify;
     margin: 20px;
-    color: red;
+    color: ${({ theme }) => theme.color.red};
 `;
